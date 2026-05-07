@@ -106,7 +106,7 @@ Most candidates complete the core requirements in 2–4 hours. If you run out of
 4. Open a pull request back to this repository
 5. Email your recruiter point of contact
 
-Questions? Reach out to nick.clucas@movewithclever.com
+Questions? Reach out to ryan@movewithclever.com
 
 ---
 
