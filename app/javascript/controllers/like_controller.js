@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = ["count"]
-  static values  = { liked: Boolean }
+  static values  = { liked: Boolean, fillPath: String, linePath: String }
 
   connect() {
     this.element.addEventListener("turbo:fetch-request-error", this.revert.bind(this))
@@ -31,10 +31,6 @@ export default class extends Controller {
   _setStarState(liked) {
     const img = this.element.querySelector("img")
     if (!img) return
-    if (liked) {
-      img.src = img.src.replace("star-line", "star-fill")
-    } else {
-      img.src = img.src.replace("star-fill", "star-line")
-    }
+    img.src = liked ? this.fillPathValue : this.linePathValue
   }
 }

@@ -1,7 +1,6 @@
 class LikesController < ApplicationController
   def create
-    photo = Photo.find(params[:photo_id])
-    @like = photo.likes.find_or_create_by(user: current_user)
+    @like = Like.find_or_create_by(photo_id: params[:photo_id], user: current_user)
     @photo = Photo.with_likes_count.find(params[:photo_id])
     respond_to do |format|
       format.turbo_stream
